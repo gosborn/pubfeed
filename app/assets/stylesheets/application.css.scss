@@ -57,7 +57,7 @@
 
 .jumbotron {
   height: 30em;
-  background-image: image-url("germination.jpg");
+  background-image: image-url("rbc.jpg");
   background-size:   cover;                      /* <------ */
   background-repeat: no-repeat;
   background-position: center center;            /* optionally, center the image */
@@ -67,3 +67,22 @@
 .keywords {
   color: red;
 }
+
+body > div.banner > div > div > strong > h3{
+  color: white;
+}
+
+.keyword_li {
+  color: white;
+}
+
+h5 > input[type="submit"] {
+  color: red;
+  background:none!important;
+  border:none; 
+  padding:0!important;
+  font: inherit; 
+  cursor: pointer;
+  display: none;
+}
+

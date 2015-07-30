@@ -5,33 +5,34 @@
 
 <div class="banner">
   <div class="jumbotron">
+    <div class ="container">
+      <strong><h3>Enter keywords you'd like to recieve daily updates on.</h3></strong>
+        <%= form_for @keyword, remote: true do |f| %>
+          <%= f.text_field :name %>
+          <%= f.submit :style => "display: none;" %>
+        <% end %>
+          <div class="keyword_list">
+            <%= render "keywords/list" %>
+          </div>
+    </div>
+  </div>
+</div>
+
+
+  <br>
   <div class ="container">
-    <strong><h3>Enter keywords you'd like to recieve daily updates on here.</h3></strong>
-      <%= form_for @keyword, remote: true do |f| %>
-        <%= f.text_field :name %>
-        <%= f.submit :style => "display: none;" %>
-      <% end %>
-      <div class="keyword_list">
-        <%= render "keywords/list" %>
+    <h2>Feed</h2><h5> <%= button_to "Refresh", "/articles", remote: true %></h5><div id="loading">Loading<span id="dots"></span></div>
+    <p>(from the last 24 hours)</p>
+    <br>
+
+
+      <div class="keyword_dropdown"%>
+        <%= render "keywords/dropdown"%>
       </div>
   </div>
-  </div>
 </div>
 
 
-  <br>
-  <div class ="container">
-
-  <h2>Feed</h2><h5> <%= button_to "Refresh", "/articles", remote: true %></h5><div id="loading">Loading<span id="dots"></span></div>
-  <p>(from the last 24 hours)</p>
-  <br>
-
-
-
-  <div class="keyword_dropdown"
-  <%= render "keywords/dropdown"%>
-  </div>
-</div>
 <div class ="container">
 
   <div class="article_list">

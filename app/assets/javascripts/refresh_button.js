@@ -9,6 +9,12 @@ $(document).ready(function(){
     $(this).hide();
     $("#loading").show();
   })
+
+  $('.keyword_li').children().mouseenter(function(){
+    $(this).children().children().show();
+  }).mouseleave(function(){
+    $(this).children().children().hide()});
+
 })
 
 function addDots(){
@@ -21,3 +27,11 @@ function addDots(){
       dots = 0;
     }
   };
+
+function hideStuff(){
+    $('.keyword_li').children().mouseenter(function(){
+    $(this).children().children().show();
+  }).mouseleave(function(){
+    $(this).children().children().hide()});
+
+};
