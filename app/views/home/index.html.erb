@@ -5,12 +5,15 @@
 
 <div class="banner">
   <div class="jumbotron">
-  <div class ="container">
+  <div class ="container"><br><br>
+    <div class="keyword_entry">
     <strong><h3>Enter keywords you'd like to recieve updates on.</h3></strong>
       <%= form_for @keyword, remote: true do |f| %>
         <%= f.text_field :name %>
         <%= f.submit :style => "display: none;", class: "keyword_submit" %>
       <% end %>
+      </div>
+      <br> <br>
       <div class="keyword_list">
         <%= render "keywords/list" %>
       </div>
@@ -32,6 +35,7 @@
   <%= render "keywords/dropdown"%>
   </div>
 </div>
+
 <br>
 <div class ="container">
 
@@ -41,7 +45,19 @@
 </div>
 
 <%else %>
-  <div align="center" class="container">
-  Pubfeed automates your daily Pubmed searches. Sign up today.
+
+<div class="banner">
+  <div class="jumbotron home-signup">
+  <div class ="container">
+     <div align="center" class="container"> <br> <br> <br> <br> <br>
+  <h2> Pubfeed automates your daily Pubmed searches <br><br></h2>
+
+
+<%= button_to "Sign up", new_user_registration_path,  {method: :get, class: 'navbar-link btn btn-primary btn-lg outline'}  %>
+
+  </div> 
   </div>
+  </div>
+</div>
+
 <%end%>
